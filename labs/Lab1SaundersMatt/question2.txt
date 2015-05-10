@@ -1,0 +1,27 @@
+2. Suppose that the definition of a fraction for the Fraction ADT was written as follows:
+
+A fraction is a number a/b where a,b are integers, b is non-zero and the greatest common denominator of (a, b) is 1.
+
+Outline all the changes and additions that would be required to make the ADT meet this more detailed definition. 
+
+---
+
+The best way to implement this new definition of fraction would be to create a function called reduceFraction().
+
+reduceFraction() would take in a fraction and change it to its reduced form.  It could be accomplished with the
+following algorithm:
+
+1. Find lesser of numerator and denominator, and divide this number by two.  ( MIN )
+2. For all i from 2 to MIN inclusive, check if numerator MOD i and denominator MOD i both equal zero.
+   This means both numerator and denominator are divisible by i.  If we never find a number that can be divided
+   into both the numerator and the denominator, the fraction is in lowest terms; break the loop and goto 5.
+3. Divide both by i.
+4. Repeat step 2 until it sends us to 5.
+5. Return the new fraction with the adjusted numerator and denominator.
+
+reduceFraction() would be called inside createFraction(), which would reduce any fraction at the time it was
+created. Since any mathematical functions like addFraction() and multiplyFraction() call createFraction, these
+functions would also return properly reduced fractions.
+
+Users of the library could still alter any given fraction's numerator and denominator on their own, but any time
+these altered fractions were sent into a mathematical function, the result would still be reduced properly.

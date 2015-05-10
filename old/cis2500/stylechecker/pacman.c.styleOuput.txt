@@ -1,0 +1,10 @@
+pacman.c:113:  Missing space before ( in if(  [whitespace/parens] [5]
+pacman.c:116:  Missing space before ( in if(  [whitespace/parens] [5]
+pacman.c:119:  Missing space before ( in if(  [whitespace/parens] [5]
+pacman.c:122:  Missing space before ( in if(  [whitespace/parens] [5]
+pacman.c:153:  Missing space before ( in for(  [whitespace/parens] [5]
+pacman.c:155:  Missing space before ( in if(  [whitespace/parens] [5]
+Done processing pacman.c
+Category 'whitespace/parens' errors found: 6
+Total errors found: 6
+LOC: 315

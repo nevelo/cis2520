@@ -1,0 +1,3 @@
+Done processing A1.c
+Total errors found: 0
+LOC: 226
