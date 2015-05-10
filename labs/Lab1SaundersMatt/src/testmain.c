@@ -59,10 +59,12 @@ int main(void)
      * it's possible to create one by directly manipulating the data. */
     printf("\n\n Testing addition of fractions...\n");
     printf("1. Adding normal fractions.\n");
+    printf("Adding %d/%d to %d/%d.\n", getNumerator(frac[0]), getDenominator(frac[0]), getNumerator(frac[4]), getDenominator(frac[4]));
     frac[10] = addFraction(frac[0], frac[4]);
     printf("Expecting 109/84... returned %d/%d.\n\n", getNumerator(frac[10]), getDenominator(frac[10]));
     
     printf("2. Adding known null fraction.\n");
+    printf("Adding %d/%d to %d/%d.\n", getNumerator(frac[8]), getDenominator(frac[8]), getNumerator(frac[3]), getDenominator(frac[3]));
     frac[11] = addFraction(frac[8], frac[3]);
     printf("Expecting divide by zero error ( 0/0 )... returned %d/%d.\n\n", getNumerator(frac[11]), getDenominator(frac[11]));
     
@@ -77,15 +79,18 @@ int main(void)
      * overflow and wrap around. */
     printf("\n\n Testing multiplication of fractions...\n");
     printf("1. Multiplying normal fractions.\n");
+    printf("Multiplying %d/%d by %d/%d.\n", getNumerator(frac[0]), getDenominator(frac[0]), getNumerator(frac[0]), getDenominator(frac[0]));
     frac[10] = multiplyFraction(frac[0], frac[0]);
     printf("Expecting 49/144... returned %d/%d.\n\n", getNumerator(frac[10]), getDenominator(frac[10]));
     
     printf("2. Multiplying fraction with numerator zero.\n");
+    printf("Multiplying %d/%d by %d/%d.\n", getNumerator(frac[0]), getDenominator(frac[0]), getNumerator(frac[2]), getDenominator(frac[2]));
     frac[11] = multiplyFraction(frac[0], frac[2]);
     printf("Expecting 0/84... returned %d/%d.\n\n", getNumerator(frac[11]), getDenominator(frac[11]));
     
     printf("3. Multiplying fraction with denominator zero.\n");
-    frac[12] = multiplyFraction(frac[0], frac[3]);
+    printf("Multiplying %d/%d by %d/%d.\n", getNumerator(frac[0]), getDenominator(frac[0]), getNumerator(frac[4]), getDenominator(frac[4]));
+    frac[12] = multiplyFraction(frac[0], frac[4]);
     printf("Expecting divide by zero error ( 0/0 )... returned %d/%d.\n\n", getNumerator(frac[12]), getDenominator(frac[12]));
     
     /* The destroyFraction function is a simple wrapper for the free() function.
